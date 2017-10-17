@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChaOS", "ChaOS\ChaOS.vcxproj", "{71AF41B9-896E-4565-A439-84C305A6EAC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71AF41B9-896E-4565-A439-84C305A6EAC1}.Debug|x64.ActiveCfg = Debug|x64
+		{71AF41B9-896E-4565-A439-84C305A6EAC1}.Debug|x64.Build.0 = Debug|x64
+		{71AF41B9-896E-4565-A439-84C305A6EAC1}.Debug|x86.ActiveCfg = Debug|Win32
+		{71AF41B9-896E-4565-A439-84C305A6EAC1}.Debug|x86.Build.0 = Debug|Win32
+		{71AF41B9-896E-4565-A439-84C305A6EAC1}.Release|x64.ActiveCfg = Release|x64
+		{71AF41B9-896E-4565-A439-84C305A6EAC1}.Release|x64.Build.0 = Release|x64
+		{71AF41B9-896E-4565-A439-84C305A6EAC1}.Release|x86.ActiveCfg = Release|Win32
+		{71AF41B9-896E-4565-A439-84C305A6EAC1}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D224E15A-74B2-4A69-AF66-3A7345F166E5}
+	EndGlobalSection
+EndGlobal
