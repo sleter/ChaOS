@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Inrerpreter.h"
+#include "Interpreter.h"
 #include <algorithm>
 
 
