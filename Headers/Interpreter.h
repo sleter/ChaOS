@@ -7,7 +7,7 @@
 class Interpreter
 {
 	//Rejestry
-	std::vector<int> REG{ 0,0,0 };
+	int REG[3]{ 0,0,0 };
 
 
 
@@ -56,7 +56,11 @@ class Interpreter
 
 	std::pair<int, int > GetParameters(std::string& cmd);
 
+	//Tymczasowe wpisywanie argumentówl
 	std::string getArgument();
+
+	//Stan rejestrów
+	void RegStatus();
 
 public:
 	Interpreter() {};

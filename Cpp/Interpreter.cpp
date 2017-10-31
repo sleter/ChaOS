@@ -24,23 +24,61 @@ void Interpreter::DoCommand(std::string& command_code)
 	}
 	std::cin.ignore(2);
 
+	RegStatus();
+
 	//Wybór rozkazu
+	int arg1, arg2;
 	switch (CommandParameters.first)
 	{
 	case 0://AD = Dodawanie
+		std::clog << "Wykonuje siê operacja dodawania..." << std::endl;
+		arg1 = atoi(Arguments[0].c_str());
+		arg2 = atoi(Arguments[1].c_str());
+		REG[arg1] += REG[arg2];
+		RegStatus();
 		break;
 	case 1://SB = Odejmowanie
+		std::clog << "Wykonuje siê operacja odejmowania..." << std::endl;
+		arg1 = atoi(Arguments[0].c_str());
+		arg2 = atoi(Arguments[1].c_str());
+		REG[arg1] -= REG[arg2];
+		RegStatus();
 		break;
 	case 2://ML = MNO¯ENIE
+		std::clog << "Wykonuje siê operacja mno¿enia..." << std::endl;
+		arg1 = atoi(Arguments[0].c_str());
+		arg2 = atoi(Arguments[1].c_str());
+		REG[arg1] *= REG[arg2];
+		RegStatus();
 		break;
 	case 3://DV = DZIELENIE
+		std::clog << "Wykonuje siê operacja dzielenia..." << std::endl;
+		arg1 = atoi(Arguments[0].c_str());
+		arg2 = atoi(Arguments[1].c_str());
+		REG[arg1] /= REG[arg2];
+		RegStatus();
 		break;
 	case 4://DR = DEKREMENTACJA
+		std::clog << "Wykonuje siê operacja dekrementacji..." << std::endl;
+		arg1 = atoi(Arguments[0].c_str());
+		REG[arg1]--;
+		RegStatus();
 		break;
 	case 5://IR = INKREMENTACJA
+		std::clog << "Wykonuje siê operacja inkrementacji..." << std::endl;
+		arg1 = atoi(Arguments[0].c_str());
+		REG[arg1]++;
+		RegStatus();
 		break;
 	case 6://MV =PRZENOSZENIE WARTOŒCI
+		std::clog << "Wykonuje siê operacja przypisania wartoœci..." << std::endl;
+		arg1 = atoi(Arguments[0].c_str());
+		arg2 = atoi(Arguments[1].c_str());
+		REG[arg1] = arg2;
+		RegStatus();
 		break;
+
+		//OPERACJE NA PLIKACH
 	case 7://MF = Utwórz plik
 		break;
 	case 8://SF = Zapis do pliku
@@ -53,6 +91,8 @@ void Interpreter::DoCommand(std::string& command_code)
 		break;
 	case 12://CP = Zmieñ nazwê pliku
 		break;
+
+		//PROCESY
 	case 13://MP = Utwórz proces
 		break;
 	case 14://EX = Wykonaj program?
@@ -82,6 +122,7 @@ void Interpreter::DoCommand(std::string& command_code)
 		break;
 	}
 
+
 }
 
 
@@ -110,3 +151,10 @@ std::string Interpreter::getArgument()
 	return arg;
 }
 
+//Wyœwietla aktualny stan rejestrów
+void Interpreter::RegStatus()
+{
+	std::cout << "Aktualny stan rejestrów" << std::endl;
+	std::cout << "R0: " << REG[0] << " | R1: " << REG[1] << " | R2 " << REG[2] << std::endl;
+	std::cin.ignore(1);
+}
