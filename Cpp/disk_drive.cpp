@@ -1,5 +1,6 @@
-﻿#include "disk_drive.h"
+﻿#include "../Headers/disk_drive.h"
 #include "iostream"
+
 
 disk_drive::disk_drive()
 	: diskSize(1024), sectorSize(32), numberOfSectors(diskSize / sectorSize)

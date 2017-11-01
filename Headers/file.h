@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include <string>
-// Klasa file reprezentuje plik na którym pracuje OS. Obiekt zwracany jest przez FileSystem po otwarciu pliku przez OS.
+// Klasa file reprezentuje plik na którym pracuje OS.
 // 
 // 1. Wpisywanie do pliku (podany obiekt string)
 // 2. Odczytywanie pliku (zwracany obiekt string)
