@@ -34,3 +34,20 @@ int Process::GetPID()
 {
 	return PID;
 }
+
+std::vector<std::pair<int, bool>> Process::GetPages() 
+{
+	return pages;
+};
+void Process::SetPages(std::vector<std::pair<int, bool>> newPages) 
+{
+	this->pages = newPages;
+};
+int Process::GetPageCount() 
+{
+	return pageCount;
+};
+void Process::SetPageCount(int newPageCount) 
+{
+	this->pageCount = newPageCount;
+};

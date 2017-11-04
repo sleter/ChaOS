@@ -22,8 +22,8 @@ private:
 	Registers registers;
 	int burstTime;
 	std::string fileName;
-	std::vector<std::pair<size_t, bool>> allocatedPages;
-	size_t numberOfPages;
+	std::vector<std::pair<int, bool>> pages;
+	int pageCount;
 
 
 public:
@@ -33,6 +33,10 @@ public:
 	void SetProcesBurstTime(int newBurstTime) {};
 	int GetProcesBurstTime() {};
 	int GetPID() {};
+	std::vector<std::pair<int, bool>> GetPages() {};
+	void SetPages(std::vector<std::pair<int, bool>> newPages) {};
+	int GetPageCount() {};
+	void SetPageCount(int newPageCount) {};
 };
 
 int Process::processesCounter = 0;
