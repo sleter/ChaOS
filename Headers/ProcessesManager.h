@@ -11,6 +11,9 @@ private:
 	std::list<Process*>readyProcesses;
 public:
 	ProcessesManager() {};
-	void createProcess(std::string fileName, int GID) {};
-	void killProcess(int PID) {};
+	void createProcess(std::string fileName, int GID);
+	void killProcess(int PID);
+	void displayAllProcesses();
+	void displayWaitingProcesses();
+	void displayReadyProcesses();
 };

@@ -28,15 +28,17 @@ private:
 
 public:
 	static int processesCounter;
-	Process(std::string fileName, int GID) {};
-	void SetState(State newState) {};
-	void SetProcesBurstTime(int newBurstTime) {};
-	int GetProcesBurstTime() {};
-	int GetPID() {};
-	std::vector<std::pair<int, bool>> GetPages() {};
-	void SetPages(std::vector<std::pair<int, bool>> newPages) {};
-	int GetPageCount() {};
-	void SetPageCount(int newPageCount) {};
+	Process(std::string fileName, int GID);
+	void SetState(State newState);
+	void SetProcesBurstTime(int newBurstTime);
+	int GetProcesBurstTime();
+	int GetPID();
+	int GetGID();
+	std::string GetFileName();
+	State GetState();
+	std::vector<std::pair<int, bool>> GetPages();
+	void SetPages(std::vector<std::pair<int, bool>> newPages);
+	int GetPageCount();
+	void SetPageCount(int newPageCount);
+	void displayProcess();
 };
-
-int Process::processesCounter = 0;

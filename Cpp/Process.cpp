@@ -5,6 +5,8 @@
 #include <vector>
 #include "../Headers/Process.h"
 
+int Process::processesCounter = 0;
+
 Process::Process(std::string fileName, int GID)
 {
 	this->PID = processesCounter++;
@@ -35,6 +37,18 @@ int Process::GetPID()
 	return PID;
 }
 
+int Process::GetGID()
+{
+	return GID;
+}
+std::string Process::GetFileName()
+{
+	return fileName;
+}
+State Process::GetState()
+{
+	return state;
+}
 std::vector<std::pair<int, bool>> Process::GetPages() 
 {
 	return pages;
@@ -51,3 +65,7 @@ void Process::SetPageCount(int newPageCount)
 {
 	this->pageCount = newPageCount;
 };
+void Process::displayProcess()
+{
+	std::cout << "PID: " << GetPID() << ", GID: " << GetGID() << ", File name: " << GetFileName() << ", Burst time: " << GetProcesBurstTime() << ", State: " << GetState() << std::endl;
+}
