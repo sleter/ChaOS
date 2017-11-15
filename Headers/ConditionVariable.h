@@ -4,14 +4,15 @@
 class ConditionVariable
 {
 private:
-	static bool schedulerState;
+	static bool processTerminated;
 	std::list<Process*> waitingProcesses;
 
 public:
 	ConditionVariable();
 	void wait(Process* process);
 	void signal();
-	void freeScheduler();
-	void busyScheduler();
+	void freeProcessor();
+	void busyProcessor();
 	void displayWaitingProcesses();
+	bool getProcessTerminated();
 };

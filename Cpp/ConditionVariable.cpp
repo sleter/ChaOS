@@ -5,7 +5,7 @@
 
 ConditionVariable::ConditionVariable()
 {
-	schedulerState = true;
+	processTerminated = true;
 }
 
 //Changes process state to waiting and adds it to waiting list. Activates scheduler.
@@ -13,36 +13,38 @@ void ConditionVariable::wait(Process* process)
 {
 	process->SetState(State::Waiting);
 	waitingProcesses.push_back(process);
-	SRTSchedulingAlgorithm();
+	//SRTSchedulingAlgorithm();
 }
 
 //Changes process state, deletes it from waitingProcesses list. Activates scheduler.
 void ConditionVariable::signal()
 {
-	if (schedulerState)
+	if (processTerminated)
 	{
 		waitingProcesses.front->SetState(State::Ready);
 		//To implement: Adding process in "ready" state to ProcessScheduling std::list<Process> processList;
 		waitingProcesses.pop_front();
-		SRTSchedulingAlgorithm();
+		//SRTSchedulingAlgorithm();
 	}
 }
 
-//For scheduler. Changes the state of scheduler to free (new processes can be added to its "ready processes list".
-void ConditionVariable::freeScheduler()
+//For scheduler and other modules - sets processTerminated variable to true which means that the other process can
+//start its calculations.
+void ConditionVariable::freeProcessor()
 {
-	if (!schedulerState)
+	if (!processTerminated)
 	{
-		schedulerState = true;
+		processTerminated = true;
 	}
 }
 
-//For scheduler. Changes the state of scheduler to busy (new processes cannot be added to its "ready processes list".
-void ConditionVariable::busyScheduler()
+//For scheduler and other modules - changes the variable processTerminated to false wchich means that the other process
+//cannot get access to processor.
+void ConditionVariable::busyProcessor()
 {
-	if (schedulerState)
+	if (processTerminated)
 	{
-		schedulerState = false;
+		processTerminated = false;
 	}
 }
 
@@ -53,4 +55,10 @@ void ConditionVariable::displayWaitingProcesses()
 	{
 		//Waiting for method to display process parameters.
 	}
+}
+
+
+bool ConditionVariable::getProcessTerminated()
+{
+	return processTerminated;
 }
