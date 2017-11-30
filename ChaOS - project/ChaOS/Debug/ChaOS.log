@@ -1,0 +1,4 @@
+﻿  stdafx.cpp
+  ChaOS.cpp
+c:\users\lenovo\documents\github\chaos\chaos - project\chaos\chaos.cpp(34): warning C4129: "_": nierozpoznany znak sekwencji ucieczki
+  ChaOS.vcxproj -> C:\Users\Lenovo\Documents\GitHub\ChaOS\ChaOS - project\Debug\ChaOS.exe
